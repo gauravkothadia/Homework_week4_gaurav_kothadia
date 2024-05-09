@@ -25,5 +25,6 @@ public class Programme09_FibonacciNumberSeries {
         System.out.println("Enter the number of elements to print for the Fibonacci series: ");
         int input = scanner.nextInt();
         fb.fibonacciSeries(input);
+        scanner.close();
     }
 }
