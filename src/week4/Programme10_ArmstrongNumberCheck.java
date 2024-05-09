@@ -45,5 +45,6 @@ public class Programme10_ArmstrongNumberCheck {
         int number = scanner.nextInt();
         Programme10_ArmstrongNumberCheck arm = new Programme10_ArmstrongNumberCheck(number);
         System.out.println(number + " is " + arm.isArmstrongNumber(number));
+        scanner.close();
     }
 }
