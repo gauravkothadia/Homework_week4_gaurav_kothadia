@@ -36,5 +36,6 @@ public class Programme11_EvenDigitSum {
         Scanner scanner = new Scanner(System.in);
         int input = scanner.nextInt();
         System.out.println("Sum of even digit(s) in "+input+" is "+getEvenDigitSum(input));
+        scanner.close();
     }
 }
