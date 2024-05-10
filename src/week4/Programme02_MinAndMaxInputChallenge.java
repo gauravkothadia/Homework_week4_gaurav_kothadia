@@ -13,47 +13,33 @@ import java.util.Scanner;
  * -Create a class with the name MinAndMaxInputChallenge.
  */
 public class Programme02_MinAndMaxInputChallenge {
-    int min;
-    int max;
-
-    Programme02_MinAndMaxInputChallenge(){
-        min=0;
-        max=0;
-    }
 
     public void inputProcessing(){
         Scanner scanner = new Scanner(System.in);
+        int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
+        
         while (true) {
-            System.out.println("Enter number: ");
-            boolean isAnInt = scanner.hasNextInt();
-            if (isAnInt) {
+            System.out.print("Enter number: ");
+            if (scanner.hasNextInt()) {
                 int number = scanner.nextInt();
-                minNumber(number);
-                maxNumber(number);
+                min = Math.min(min, number);
+                max = Math.max(max, number);
             } else {
+                System.out.println("Invalid input. Exiting loop.");
+                scanner.nextLine(); // Clear the buffer for new line.
                 break;
             }
-            scanner.nextLine(); // handle end of line (enter key)
         }
-        scanner.close(); // closing the scanner.
-    }
-
-    public void minNumber(int a){
-        if(a<min){
-            min = a;
-        }
-    }
-
-    public void maxNumber(int a){
-        if(a>max){
-            max=a;
-        }
+        
+        System.out.println("Minimum number: " + (min == Integer.MAX_VALUE ? "N/A" : min));
+        System.out.println("Maximum number: " + (max == Integer.MIN_VALUE ? "N/A" : max));
+        
+        scanner.close();
     }
 
     public static void main(String[] args) {
         Programme02_MinAndMaxInputChallenge ch = new Programme02_MinAndMaxInputChallenge();
         ch.inputProcessing();
-        System.out.println("Minimum number: "+ch.min);
-        System.out.println("Maximum number: "+ch.max);
     }
 }
