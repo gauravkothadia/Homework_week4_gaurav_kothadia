@@ -59,6 +59,5 @@ public class Programme13_SharedDigit {
         System.out.print("Enter second number: ");
         int secondNumber = scanner.nextInt();
         System.out.println(hasSharedDigit(firstNumber,secondNumber));
-        scanner.close();
     }
 }
